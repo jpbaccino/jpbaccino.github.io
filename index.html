@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jpbaccino | Mobile Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --dark: #1e293b;
+            --light: #f8fafc;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            width: 90%;
+            max-width: 600px;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: var(--primary);
+            margin-bottom: 20px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 40px;
+        }
+        h1 { margin-bottom: 10px; font-size: 1.8rem; }
+        p { color: #64748b; margin-bottom: 30px; }
+        
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.2s;
+        }
+        .card:hover { transform: translateY(-3px); border-left: 5px solid var(--primary); }
+        .card i { font-size: 24px; margin-right: 20px; color: var(--primary); }
+        .card-info { text-align: left; }
+        .card-title { font-weight: bold; display: block; }
+        .card-subtitle { font-size: 0.9rem; color: #64748b; }
+
+        footer { margin-top: auto; padding: 20px; font-size: 0.8rem; color: #94a3b8; }
+        footer a { color: inherit; text-decoration: underline; margin: 0 10px; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="profile-img">
+            <i class="fas fa-code"></i>
+        </div>
+        <h1>Bato</h1>
+        <p>Desarrollador de aplicaciones móviles enfocadas en soluciones reales.</p>
+
+        <a href="URL_DE_GOOGLE_PLAY_AQUI" class="card">
+            <i class="fas fa-mobile-alt"></i>
+            <div class="card-info">
+                <span class="card-title">Tripxy: Travel Expenses</span>
+                <span class="card-subtitle">Disponible ahora en Google Play Store</span>
+            </div>
+        </a>
+
+        <a href="mailto:tripxy.app@gmail.com" class="card">
+            <i class="fas fa-envelope"></i>
+            <div class="card-info">
+                <span class="card-title">Soporte técnico</span>
+                <span class="card-subtitle">¿Tienes dudas? Escríbeme</span>
+            </div>
+        </a>
+
+      
+    </div>
+
+    <footer>
+        <p>© 2024 Bato</p>
+        <a href="privacy.html">Política de Privacidad</a> | 
+        <a href="app-ads.txt">app-ads.txt</a>
+    </footer>
+
+</body>
+</html>
