@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TalentoTech | IT Recruiting y Staff Augmentation</title>
+<meta name="description" content="Encontramos y sumamos talento IT senior a tu equipo. Reclutamiento especializado y staff augmentation en días, no meses.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#07090f; --bg2:#0d111c; --card:#111726; --line:#1f2740;
+  --text:#e8ecf6; --muted:#8e99b5;
+  --a:#6d5efc; --b:#22d3ee; --grad:linear-gradient(135deg,var(--a),var(--b));
+  --r:18px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+section{padding:96px 0}
+h1,h2,h3{line-height:1.12;letter-spacing:-.02em}
+h2{font-size:clamp(1.9rem,4vw,2.8rem);font-weight:800;margin-bottom:14px}
+.eyebrow{display:inline-block;font-size:.8rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--b);margin-bottom:14px}
+.lead{color:var(--muted);font-size:1.1rem;max-width:620px}
+.grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* nav */
+nav{position:fixed;inset:0 0 auto 0;z-index:50;backdrop-filter:blur(14px);background:rgba(7,9,15,.7);border-bottom:1px solid rgba(255,255,255,.05)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-weight:800;font-size:1.2rem;display:flex;align-items:center;gap:10px}
+.logo i{width:28px;height:28px;border-radius:8px;background:var(--grad);display:inline-block}
+.links{display:flex;gap:30px;align-items:center;font-size:.95rem;color:var(--muted)}
+.links a:hover{color:var(--text)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 24px;border-radius:12px;font-weight:600;font-size:.97rem;border:1px solid transparent;cursor:pointer;font-family:inherit;transition:transform .15s,box-shadow .2s,background .2s}
+.btn:active{transform:scale(.97)}
+.btn-p{background:var(--grad);color:#fff;box-shadow:0 8px 28px -8px rgba(109,94,252,.7)}
+.btn-p:hover{box-shadow:0 12px 34px -6px rgba(109,94,252,.9)}
+.btn-g{border-color:var(--line);color:var(--text);background:rgba(255,255,255,.02)}
+.btn-g:hover{background:rgba(255,255,255,.07)}
+.links .btn{padding:9px 18px;color:#fff}
+
+/* hero */
+.hero{padding:170px 0 90px;position:relative;text-align:center}
+.hero::before,.hero::after{content:"";position:absolute;border-radius:50%;filter:blur(110px);z-index:-1;opacity:.35}
+.hero::before{width:480px;height:480px;background:var(--a);top:-80px;left:-120px}
+.hero::after{width:420px;height:420px;background:var(--b);top:80px;right:-120px;opacity:.22}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border:1px solid var(--line);border-radius:99px;font-size:.85rem;color:var(--muted);background:rgba(255,255,255,.03);margin-bottom:26px}
+.pill b{width:8px;height:8px;border-radius:50%;background:#34d399;box-shadow:0 0 10px #34d399}
+.hero h1{font-size:clamp(2.5rem,7vw,4.8rem);font-weight:800;max-width:900px;margin:0 auto 22px}
+.hero p{font-size:clamp(1.05rem,2vw,1.25rem);color:var(--muted);max-width:640px;margin:0 auto 36px}
+.cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:80px;padding:30px;border:1px solid var(--line);border-radius:var(--r);background:var(--bg2)}
+.stats strong{display:block;font-size:2.1rem;font-weight:800}
+.stats span{color:var(--muted);font-size:.9rem}
+
+/* services */
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:48px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:34px;transition:transform .25s,border-color .25s}
+.card:hover{transform:translateY(-4px);border-color:#3a4570}
+.ico{width:48px;height:48px;border-radius:12px;background:var(--grad);display:grid;place-items:center;font-size:1.4rem;margin-bottom:20px}
+.card h3{font-size:1.4rem;margin-bottom:10px}
+.card p{color:var(--muted);margin-bottom:18px}
+.card li{list-style:none;color:#c4cce0;font-size:.95rem;padding:5px 0 5px 26px;position:relative}
+.card li::before{content:"✓";position:absolute;left:0;color:var(--b);font-weight:700}
+
+/* steps */
+.alt{background:var(--bg2);border-block:1px solid var(--line)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:48px;counter-reset:s}
+.step{padding:26px;border-radius:var(--r);border:1px solid var(--line);background:var(--card);counter-increment:s}
+.step::before{content:"0" counter(s);font-size:2rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.step h3{font-size:1.1rem;margin:10px 0 6px}
+.step p{color:var(--muted);font-size:.93rem}
+
+/* tech */
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:36px}
+.chips span{padding:9px 16px;border:1px solid var(--line);border-radius:99px;font-size:.9rem;color:#c4cce0;background:var(--card)}
+
+/* why */
+.why{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.why .card{padding:28px}
+.why h3{font-size:1.15rem;margin-bottom:8px}
+.why p{margin:0}
+
+/* story */
+.story{display:grid;grid-template-columns:1fr 1.4fr;gap:56px;align-items:start;margin-bottom:64px}
+.story h2{margin-bottom:0}
+.story-text p{color:#c4cce0;font-size:1.05rem;margin-bottom:18px}
+.story-text p:last-child{margin-bottom:0}
+.story-text strong{color:var(--text)}
+/* faq */
+.faq{max-width:780px;margin:48px auto 0;display:grid;gap:12px}
+details{background:var(--card);border:1px solid var(--line);border-radius:14px;transition:border-color .2s}
+details[open]{border-color:#3a4570}
+summary{cursor:pointer;list-style:none;padding:20px 24px;font-weight:600;display:flex;justify-content:space-between;align-items:center;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:1.5rem;line-height:1;color:var(--b);transition:transform .25s;flex-shrink:0}
+details[open] summary::after{transform:rotate(45deg)}
+details p{padding:0 24px 22px;color:var(--muted)}
+.center{text-align:center}.center .lead{margin-inline:auto}
+
+/* contact */
+.contact{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:start}
+.info{margin-top:30px;display:grid;gap:14px;color:#c4cce0}
+form{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:32px;display:grid;gap:18px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.field{display:grid;gap:7px;font-size:.88rem;font-weight:500;color:#c4cce0;align-content:start}
+.cc{position:relative}
+.cc-btn{font:inherit;font-size:16px;color:var(--text);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:12px 14px;width:100%;display:flex;align-items:center;gap:10px;cursor:pointer;text-align:left;transition:border-color .2s,box-shadow .2s}
+.cc-btn:focus-visible,.cc-btn[aria-expanded="true"]{outline:none;border-color:var(--a);box-shadow:0 0 0 3px rgba(109,94,252,.25)}
+.cc-btn .code{flex:1}
+.cc-btn::after{content:"▾";color:var(--muted);font-size:.8rem}
+.cc img,.cc-btn img{width:22px;height:16px;object-fit:cover;border-radius:3px;flex-shrink:0;box-shadow:0 0 0 1px rgba(255,255,255,.12)}
+.cc-panel{position:absolute;z-index:20;top:calc(100% + 6px);left:0;width:min(330px,calc(100vw - 40px));background:var(--card);border:1px solid #3a4570;border-radius:12px;box-shadow:0 20px 50px -10px rgba(0,0,0,.7);padding:10px}
+.cc-panel input{margin-bottom:8px}
+.cc-panel ul{list-style:none;max-height:240px;overflow-y:auto;overscroll-behavior:contain}
+.cc-panel li{display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:8px;cursor:pointer;font-size:.92rem;font-weight:400;color:var(--text)}
+.cc-panel li span.d{margin-left:auto;color:var(--muted);font-size:.85rem}
+.cc-panel li:hover,.cc-panel li.act{background:rgba(109,94,252,.22)}
+.cc-panel li[aria-selected="true"]{color:var(--b)}
+.cc-empty{padding:12px;color:var(--muted);font-size:.9rem;cursor:default!important}
+.phone{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:18px}
+label{display:grid;gap:7px;font-size:.88rem;font-weight:500;color:#c4cce0}
+input,select,textarea{font:inherit;font-size:16px;color:var(--text);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:12px 14px;width:100%;transition:border-color .2s,box-shadow .2s}
+textarea{min-height:120px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--a);box-shadow:0 0 0 3px rgba(109,94,252,.25)}
+input.bad,select.bad,textarea.bad{border-color:#f87171}
+[hidden]{display:none!important}
+.hp{position:absolute;left:-9999px}
+#msg{font-size:.92rem;min-height:1.3em}
+#msg.ok{color:#34d399}#msg.err{color:#f87171}
+.fine{font-size:.8rem;color:var(--muted)}
+
+footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-size:.9rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+@media (max-width:900px){
+  section{padding:70px 0}
+  .links a:not(.btn){display:none}
+  .grid2,.contact,.why,.story{grid-template-columns:1fr}.story{gap:24px;margin-bottom:48px}
+  .steps,.stats{grid-template-columns:1fr 1fr}
+  .row{grid-template-columns:1fr}
+  .hero{padding-top:130px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="#" class="logo"><i></i>TalentoTech</a>
+    <div class="links">
+      <a href="#servicios">Servicios</a>
+      <a href="#proceso">Proceso</a>
+      <a href="#porque">Por qué nosotros</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contacto" class="btn btn-p">Hablemos</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="pill"><b></b> Talento IT disponible esta semana</div>
+    <h1>El talento tecnológico que tu equipo necesita, <span class="grad">sin esperar meses</span></h1>
+    <p>Reclutamiento IT especializado y staff augmentation. Sumamos ingenieros senior a tu equipo, rápido y con calidad verificada.</p>
+    <div class="cta">
+      <a href="#contacto" class="btn btn-p">Solicitar perfiles →</a>
+      <a href="#servicios" class="btn btn-g">Ver servicios</a>
+    </div>
+    <div class="stats">
+      <div><strong class="grad">7 días</strong><span>Primeros perfiles</span></div>
+      <div><strong class="grad">+500</strong><span>Profesionales colocados</span></div>
+      <div><strong class="grad">92%</strong><span>Retención a 12 meses</span></div>
+      <div><strong class="grad">+80</strong><span>Empresas confían en nosotros</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="servicios">
+  <div class="wrap">
+    <span class="eyebrow">Servicios</span>
+    <h2 class="reveal">Dos formas de crecer tu equipo</h2>
+    <p class="lead reveal">Elegí el modelo que mejor se adapta a tu momento: contratar de forma permanente o escalar con flexibilidad.</p>
+    <div class="grid2">
+      <article class="card reveal">
+        <div class="ico">🎯</div>
+        <h3>IT Recruiting</h3>
+        <p>Búsqueda end-to-end de perfiles tecnológicos para incorporar a tu planta permanente.</p>
+        <ul>
+          <li>Búsquedas de perfiles técnicos y de liderazgo</li>
+          <li>Evaluación técnica y cultural</li>
+          <li>Shortlist de candidatos calificados</li>
+          <li>Garantía de reemplazo</li>
+        </ul>
+      </article>
+      <article class="card reveal">
+        <div class="ico">🚀</div>
+        <h3>Staff Augmentation</h3>
+        <p>Extendé tu equipo con desarrolladores y especialistas que se integran a tu forma de trabajo.</p>
+        <ul>
+          <li>Escalá hacia arriba o abajo según tu proyecto</li>
+          <li>Nosotros nos ocupamos de contratos y administración</li>
+          <li>Integración total con tus herramientas y procesos</li>
+          <li>Sin costos de contratación a largo plazo</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="proceso" class="alt">
+  <div class="wrap">
+    <span class="eyebrow">Proceso</span>
+    <h2 class="reveal">Simple, rápido y transparente</h2>
+    <div class="steps">
+      <div class="step reveal"><h3>Entendemos tu necesidad</h3><p>Definimos stack, seniority, cultura y objetivos del rol.</p></div>
+      <div class="step reveal"><h3>Buscamos y filtramos</h3><p>Activamos nuestra red y evaluamos técnicamente a cada candidato.</p></div>
+      <div class="step reveal"><h3>Presentamos perfiles</h3><p>Recibís una shortlist calificada en pocos días.</p></div>
+      <div class="step reveal"><h3>Te acompañamos</h3><p>Seguimiento post-incorporación para asegurar el éxito.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="eyebrow">Tecnologías</span>
+    <h2 class="reveal">Cubrimos todo tu stack</h2>
+    <p class="lead reveal">Desde frontend hasta data e infraestructura.</p>
+    <div class="chips reveal">
+      <span>JavaScript / TypeScript</span><span>React</span><span>Node.js</span><span>Python</span><span>Java</span><span>.NET</span><span>Go</span>
+      <span>Mobile (iOS / Android)</span><span>AWS · Azure · GCP</span><span>DevOps / SRE</span><span>Data &amp; IA</span><span>QA Automation</span><span>UX/UI</span><span>Product &amp; Project Mgmt</span>
+    </div>
+  </div>
+</section>
+
+<section id="porque" class="alt">
+  <div class="wrap">
+    <div class="story">
+      <div>
+        <span class="eyebrow">Por qué TalentoTech</span>
+        <h2 class="reveal">Un equipo que se eligió a sí mismo</h2>
+      </div>
+      <div class="story-text reveal">
+        <p>En TalentoTech nacimos de un desafío transformador. Tras un proceso de reestructuración masivo en una importante consultora, un grupo de profesionales de alto nivel —ampliamente cualificados, probados en el terreno y impulsados por la excelencia— nos encontramos repentinamente ante la incertidumbre de un nuevo comienzo.</p>
+        <p>Sin embargo, lo que pudo ser un obstáculo se convirtió en nuestra mayor fortaleza. En lugar de dispersarnos, decidimos apoyarnos mutuamente y mantener intacto lo que siempre fuimos: <strong>un equipo unido</strong>.</p>
+        <p>Ese mismo equipo es el que hoy ponemos a disposición de nuestros clientes. En TalentoTech no solo ofrecemos capacidad técnica y experiencia comprobada; garantizamos una cultura organizacional sólida construida sobre el trabajo en equipo, el esfuerzo constante, la responsabilidad y un profesionalismo intachable. Sabemos lo que significa superar retos juntos, y llevamos ese compromiso a cada proyecto que emprendemos.</p>
+      </div>
+    </div>
+    <div class="why">
+      <div class="card reveal"><h3>⚡ Velocidad</h3><p>Una red de talento activa nos permite presentarte candidatos en días.</p></div>
+      <div class="card reveal"><h3>🔍 Calidad verificada</h3><p>Cada perfil pasa por entrevistas técnicas realizadas por especialistas.</p></div>
+      <div class="card reveal"><h3>🤝 Flexibilidad</h3><p>Modelos a medida: contratación directa, temporal o por proyecto.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap center">
+    <span class="eyebrow">Preguntas frecuentes</span>
+    <h2 class="reveal">Resolvemos tus dudas</h2>
+    <div class="faq" style="text-align:left">
+      <details>
+        <summary>¿Cuánto tardan en presentar los primeros perfiles?</summary>
+        <p>Normalmente entre 5 y 7 días hábiles desde que definimos el perfil juntos. Para stacks muy específicos o roles de liderazgo puede tomar un poco más.</p>
+      </details>
+      <details>
+        <summary>¿Cuál es la diferencia entre recruiting y staff augmentation?</summary>
+        <p>En recruiting buscamos al profesional para que lo incorpores a tu nómina. En staff augmentation el profesional trabaja en tu equipo pero lo contratamos y administramos nosotros, ideal para proyectos con plazos o necesidades cambiantes.</p>
+      </details>
+      <details>
+        <summary>¿Cómo evalúan a los candidatos?</summary>
+        <p>Cada candidato pasa por una entrevista de screening, una evaluación técnica realizada por especialistas del área y una validación de fit cultural y comunicación.</p>
+      </details>
+      <details>
+        <summary>¿Cómo se estructura el costo del servicio?</summary>
+        <p>En recruiting trabajamos con un fee sobre el salario anual del candidato, solo si se concreta la contratación. En staff augmentation se factura una tarifa mensual por profesional. Contanos tu caso y te enviamos una propuesta.</p>
+      </details>
+      <details>
+        <summary>¿Hay garantía si el candidato no funciona?</summary>
+        <p>Sí. Ofrecemos un período de garantía con reemplazo sin costo adicional si el profesional no continúa dentro de ese plazo.</p>
+      </details>
+      <details>
+        <summary>¿Pueden trabajar con equipos remotos o en otros países?</summary>
+        <p>Sí, trabajamos con talento remoto en LATAM y podemos alinear husos horarios con tu equipo.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section id="contacto">
+  <div class="wrap contact">
+    <div>
+      <span class="eyebrow">Contacto</span>
+      <h2 class="reveal">Contanos qué perfil estás buscando</h2>
+      <p class="lead reveal">Respondemos en menos de 24 horas hábiles con una propuesta inicial.</p>
+      <div class="info">
+        <div>✉️ hola@talentotech.com</div>
+        <div>📞 +598 99 123 456</div>
+        <div>📍 Remoto · LATAM &amp; USA</div>
+      </div>
+    </div>
+
+    <form id="form" novalidate>
+      <div class="row">
+        <label>Nombre *<input name="nombre" required autocomplete="name" placeholder="Tu nombre"></label>
+        <label>Empresa<input name="empresa" autocomplete="organization" placeholder="Nombre de tu empresa"></label>
+      </div>
+      <label>Tu rol
+        <select name="rol" id="rol">
+          <option value="">Seleccioná tu rol</option>
+          <option>CEO / Fundador</option>
+          <option>CTO / Líder de Tecnología</option>
+          <option>Gerente / Director de IT</option>
+          <option>Gerente / Líder de Ingeniería</option>
+          <option>Gerente de Producto / Proyectos</option>
+          <option>Recursos Humanos / Talent Acquisition</option>
+          <option>Gerente de Operaciones</option>
+          <option>Finanzas / Compras</option>
+          <option>Marketing / Comercial</option>
+          <option>Otro</option>
+        </select>
+      </label>
+      <label id="rolOtroWrap" hidden>Especificá tu rol<input name="rol_otro" id="rolOtro" placeholder="Ej: Gerente de Innovación"></label>
+      <label>Email *<input name="email" type="email" required autocomplete="email" placeholder="vos@empresa.com"></label>
+      <div class="phone">
+        <div class="field">País
+          <div class="cc" id="cc">
+            <button type="button" class="cc-btn" id="ccBtn" aria-haspopup="listbox" aria-expanded="false"></button>
+            <div class="cc-panel" id="ccPanel" hidden>
+              <input type="search" id="ccSearch" placeholder="Buscar país o código..." autocomplete="off" aria-label="Buscar país">
+              <ul id="ccList" role="listbox"></ul>
+            </div>
+            <input type="hidden" name="pais" id="ccVal" value="+598">
+          </div>
+        </div>
+        <label>Teléfono<input name="telefono" type="tel" inputmode="tel" autocomplete="tel-national" placeholder="99 123 456"></label>
+      </div>
+      <label>Servicio de interés *
+        <select name="servicio" required>
+          <option value="">Seleccioná una opción</option>
+          <option>IT Recruiting</option>
+          <option>Staff Augmentation</option>
+          <option>Ambos / No estoy seguro</option>
+        </select>
+      </label>
+      <label>Mensaje *<textarea name="mensaje" required placeholder="Perfiles, seniority, stack, cantidad, plazos..."></textarea></label>
+      <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button class="btn btn-p" type="submit" id="send">Enviar consulta</button>
+      <div id="msg" role="status" aria-live="polite"></div>
+      <p class="fine">Tus datos solo se usan para responder tu consulta.</p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="y"></span> TalentoTech. Todos los derechos reservados.</span>
+    <span>IT Recruiting · Staff Augmentation</span>
+  </div>
+</footer>
+
+<script>
+// ---- Configuración del formulario ----
+// Opción 1: pegá acá tu endpoint (ej. https://formspree.io/f/xxxxxxx) para recibir los envíos por email.
+// Opción 2: si queda vacío, se abre el cliente de correo con el mensaje armado.
+const FORM_ENDPOINT = "";
+const FORM_EMAIL = "hola@talentotech.com";
+
+document.getElementById("y").textContent = new Date().getFullYear();
+
+// Animación de aparición al hacer scroll
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+}), { threshold: .15 });
+document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+
+// ---- Selector de país con buscador ----
+const DIAL = "AF93 AL355 DZ213 AS1684 AD376 AO244 AI1264 AG1268 AR54 AM374 AW297 AU61 AT43 AZ994 BS1242 BH973 BD880 BB1246 BY375 BE32 BZ501 BJ229 BM1441 BT975 BO591 BA387 BW267 BR55 IO246 VG1284 BN673 BG359 BF226 BI257 KH855 CM237 CA1 CV238 KY1345 CF236 TD235 CL56 CN86 CO57 KM269 CG242 CD243 CK682 CR506 CI225 HR385 CU53 CW599 CY357 CZ420 DK45 DJ253 DM1767 DO1809 EC593 EG20 SV503 GQ240 ER291 EE372 SZ268 ET251 FK500 FO298 FJ679 FI358 FR33 GF594 PF689 GA241 GM220 GE995 DE49 GH233 GI350 GR30 GL299 GD1473 GP590 GU1671 GT502 GG44 GN224 GW245 GY592 HT509 HN504 HK852 HU36 IS354 IN91 ID62 IR98 IQ964 IE353 IM44 IL972 IT39 JM1876 JP81 JE44 JO962 KZ7 KE254 KI686 XK383 KW965 KG996 LA856 LV371 LB961 LS266 LR231 LY218 LI423 LT370 LU352 MO853 MG261 MW265 MY60 MV960 ML223 MT356 MH692 MQ596 MR222 MU230 YT262 MX52 FM691 MD373 MC377 MN976 ME382 MS1664 MA212 MZ258 MM95 NA264 NR674 NP977 NL31 NC687 NZ64 NI505 NE227 NG234 NU683 KP850 MK389 MP1670 NO47 OM968 PK92 PW680 PS970 PA507 PG675 PY595 PE51 PH63 PL48 PT351 PR1787 QA974 RE262 RO40 RU7 RW250 BL590 SH290 KN1869 LC1758 MF590 PM508 VC1784 WS685 SM378 ST239 SA966 SN221 RS381 SC248 SL232 SG65 SX1721 SK421 SI386 SB677 SO252 ZA27 KR82 SS211 ES34 LK94 SD249 SR597 SE46 CH41 SY963 TW886 TJ992 TZ255 TH66 TL670 TG228 TK690 TO676 TT1868 TN216 TR90 TM993 TC1649 TV688 VI1340 UG256 UA380 AE971 GB44 US1 UY598 UZ998 VU678 VA39 VE58 VN84 WF681 EH212 YE967 ZM260 ZW263 AX358";
+const regionNames = (() => { try { return new Intl.DisplayNames(["es"], { type: "region" }); } catch { return null; } })();
+const norm = s => s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+const COUNTRIES = DIAL.split(" ").map(x => {
+  const iso = x.slice(0, 2), dial = "+" + x.slice(2);
+  let name = iso; try { name = regionNames ? regionNames.of(iso) : iso; } catch {}
+  return { iso, dial, name, key: norm(name + " " + dial + " " + iso) };
+}).sort((a, b) => a.name.localeCompare(b.name, "es"));
+
+const cc = document.getElementById("cc"), ccBtn = document.getElementById("ccBtn"),
+      ccPanel = document.getElementById("ccPanel"), ccSearch = document.getElementById("ccSearch"),
+      ccList = document.getElementById("ccList"), ccVal = document.getElementById("ccVal");
+const flag = iso => `<img src="https://flagcdn.com/w40/${iso.toLowerCase()}.png" alt="" loading="lazy" width="22" height="16">`;
+let current = "UY", active = 0, shown = [];
+
+function setCountry(iso) {
+  const c = COUNTRIES.find(x => x.iso === iso); if (!c) return;
+  current = iso; ccVal.value = c.dial;
+  ccBtn.innerHTML = `${flag(c.iso)}<span class="code">${c.name} (${c.dial})</span>`;
+}
+function renderList(q = "") {
+  const n = norm(q.trim());
+  shown = COUNTRIES.filter(c => c.key.includes(n));
+  ccList.innerHTML = shown.length
+    ? shown.map((c, i) => `<li role="option" data-i="${i}" aria-selected="${c.iso === current}" class="${i === active ? "act" : ""}">${flag(c.iso)}<span>${c.name}</span><span class="d">${c.dial}</span></li>`).join("")
+    : `<li class="cc-empty">Sin resultados</li>`;
+}
+function openCC() {
+  ccPanel.hidden = false; ccBtn.setAttribute("aria-expanded", "true");
+  ccSearch.value = ""; renderList(); active = Math.max(0, shown.findIndex(c => c.iso === current)); renderList();
+  ccList.querySelector(".act")?.scrollIntoView({ block: "center" });
+  ccSearch.focus({ preventScroll: true });
+}
+function closeCC(focusBtn) {
+  ccPanel.hidden = true; ccBtn.setAttribute("aria-expanded", "false");
+  if (focusBtn) ccBtn.focus();
+}
+function pick(i) { if (shown[i]) { setCountry(shown[i].iso); closeCC(true); } }
+
+ccBtn.addEventListener("click", () => ccPanel.hidden ? openCC() : closeCC());
+ccSearch.addEventListener("input", () => { active = 0; renderList(ccSearch.value); });
+ccSearch.addEventListener("keydown", e => {
+  if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+    e.preventDefault();
+    active = Math.min(Math.max(active + (e.key === "ArrowDown" ? 1 : -1), 0), shown.length - 1);
+    renderList(ccSearch.value); ccList.querySelector(".act")?.scrollIntoView({ block: "nearest" });
+  } else if (e.key === "Enter") { e.preventDefault(); pick(active); }
+  else if (e.key === "Escape") { e.preventDefault(); closeCC(true); }
+});
+ccList.addEventListener("click", e => { const li = e.target.closest("li[data-i]"); if (li) pick(+li.dataset.i); });
+document.addEventListener("click", e => { if (!ccPanel.hidden && !cc.contains(e.target)) closeCC(); });
+setCountry("UY");
+// Rol: si elige "Otro", pedimos que lo especifique
+const rol = document.getElementById("rol"), rolWrap = document.getElementById("rolOtroWrap");
+const rolOtro = document.getElementById("rolOtro");
+const syncRol = () => {
+  const otro = rol.value === "Otro";
+  rolWrap.hidden = !otro;
+  rolOtro.disabled = !otro;          // un campo deshabilitado no se incluye en el envío
+  if (!otro) rolOtro.value = "";
+};
+syncRol();
+rol.addEventListener("change", syncRol);
+
+const form = document.getElementById("form");
+const msg = document.getElementById("msg");
+const btn = document.getElementById("send");
+
+function say(text, cls){ msg.textContent = text; msg.className = cls; }
+
+form.addEventListener("submit", async e => {
+  e.preventDefault();
+  const d = Object.fromEntries(new FormData(form));
+  if (d.website) return; // honeypot anti-spam
+
+  let ok = true;
+  form.querySelectorAll("[required]").forEach(f => {
+    const bad = !f.value.trim() || (f.type === "email" && !/^\S+@\S+\.\S+$/.test(f.value));
+    f.classList.toggle("bad", bad);
+    if (bad) ok = false;
+  });
+  if (!ok) return say("Revisá los campos marcados.", "err");
+
+  btn.disabled = true; say("Enviando...", "");
+  try {
+    if (FORM_ENDPOINT) {
+      const r = await fetch(FORM_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify(d)
+      });
+      if (!r.ok) throw new Error();
+      form.reset(); setCountry("UY"); syncRol();
+      say("¡Gracias! Recibimos tu consulta y te escribiremos pronto.", "ok");
+    } else {
+      const body = `Nombre: ${d.nombre}\nEmpresa: ${d.empresa}\nRol: ${d.rol === "Otro" && d.rol_otro ? "Otro - " + d.rol_otro : d.rol}\nEmail: ${d.email}\nTeléfono: ${d.telefono ? (d.pais + " " + d.telefono).trim() : ""}\nServicio: ${d.servicio}\n\n${d.mensaje}`;
+      location.href = `mailto:${FORM_EMAIL}?subject=${encodeURIComponent("Consulta web - " + d.servicio)}&body=${encodeURIComponent(body)}`;
+      say("Abriendo tu cliente de correo para completar el envío.", "ok");
+    }
+  } catch {
+    say("No pudimos enviar el mensaje. Escribinos a " + FORM_EMAIL, "err");
+  } finally { btn.disabled = false; }
+});
+form.addEventListener("input", e => e.target.classList.remove("bad"));
+</script>
+</body>
+</html>
